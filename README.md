@@ -4,5 +4,11 @@ Hip is a template for web applications using [Flask](http://flask.pocoo.org/), [
 ### To use:
 1. Clone this repo
 2. Modify the repo's remote--this repo is just a template.
-3. Run `docker build -t <TAG NAME> .`
-4. Run `docker run -p 80:80 -d <IMAGE ID>`.
+
+**...in development**
+3a. Install Flask.
+3b. Run `python run.py`
+
+**...in production**
+3b. Run `docker build -t <TAG NAME> .`
+4b. Run `docker run -p 80:80 -d <IMAGE ID>`.
