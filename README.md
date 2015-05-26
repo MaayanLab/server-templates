@@ -7,10 +7,10 @@ Hip is a template for web applications using [Flask](http://flask.pocoo.org/), [
 
 **...in development**
 
-3a. Install Flask.
-3b. Run `python run.py`
+3. Install Flask.
+4. Run `python run.py`
 
 **...in production**
 
-3b. Run `docker build -t <TAG NAME> .`
-4b. Run `docker run -p 80:80 -d <IMAGE ID>`.
+3. Run `docker build -t <TAG NAME> .`
+4. Run `docker run -p 80:80 -d <IMAGE ID>`.
