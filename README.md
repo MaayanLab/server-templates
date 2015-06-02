@@ -4,6 +4,7 @@ Hip is a template for web applications using [Flask](http://flask.pocoo.org/), [
 ### To use:
 - Clone this repo
 - Modify the repo's remote--this repo is just a template.
+- In `Dockerfile`, `boot.sh`, and `app.py`, rename the word "hip" to the name of your application.
 - Then...
 
 **...in development**

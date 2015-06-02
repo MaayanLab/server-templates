@@ -17,6 +17,6 @@ RUN pip install -Iv Flask==0.10.1
 
 EXPOSE 80
 
-ADD . /app
+ADD . /hip
 
-CMD /app/boot.sh
+CMD /hip/boot.sh
