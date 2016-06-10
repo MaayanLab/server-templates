@@ -14,15 +14,15 @@ The part of Flask that matters in production is the web framework, the glue betw
 
 You need a WSGI-compliant web server—here we'll use Apache—in order to deploy your Flask application.
 
-##### What is WSGI?
+#### What is WSGI?
 
 When Flask claims to be "WSGI 1.0 compliant", it means that it adheres to Python's [Web Server Gateway Interface](https://www.python.org/dev/peps/pep-3333/). WSGI exists because (1) there are a lot of different web frameworks to choose from and (2) the choice of web framework can limit the choice of web server. In other words, WSGI is an interface that, if both framework and server developers adhere to, allows Python programmers to port WSGI-compliant applications to any server of their choice. To deploy your Flask application to production, you can use any WSGI-compliant server. This project uses Apache.
 
-##### What is the relationshiop between Apache and Flask?
+#### What is the relationshiop between Apache and Flask?
 
 You can think of Apache as wrapping your Flask application. Apache, which is a popular, open-source, and robust web server, responds to the actually HTTP requests. It then delegates the requests to your application. What actually happens is Apache creates a new Flask application for every HTTP request. This is a nice abstraction; you can imagine your Flask application as running in a completely isolated environment, responding to a single HTTP request. Apache handles multi-threading your application for multiple simultaneous requests.
 
-##### What is mod_wsgi?
+#### What is mod_wsgi?
 
 Out of the box, Apache is not WSGI-compliant. But Apache is , and mod_wsgi is a module for making Apache WSGI-compliant. Notice in this project's Dockerfile, we install `apache2-prefork-dev`:
 
@@ -49,7 +49,7 @@ $ docker run -p 80:80 -d <IMAGE ID>.
 - Navigate to `<IP address of Docker machine>/hip` and verify that Apache is properly delegating to Hip.
 - Move your code into the Hip application, renaming things as needed.
 
-##### Developing locally
+#### Developing locally
 
 Nothing changes when you develop locally. Just use:
 
