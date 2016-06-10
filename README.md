@@ -20,11 +20,11 @@ When Flask claims to be "WSGI 1.0 compliant", it means that it adheres to Python
 
 #### What is the relationshiop between Apache and Flask?
 
-You can think of Apache as wrapping your Flask application. Apache, which is a popular, open-source, and robust web server, responds to the actually HTTP requests. It then delegates the requests to your application. What actually happens is Apache creates a new Flask application for every HTTP request. This is a nice abstraction; you can imagine your Flask application as running in a completely isolated environment, responding to a single HTTP request. Apache handles multi-threading your application for multiple simultaneous requests.
+You can think of Apache as wrapping your Flask application. Apache, which is a popular, open-source, and robust web server, responds to HTTP requests. It then delegates the requests to your application. What actually happens is that Apache creates a new Flask application for every HTTP request. This is a nice abstraction; you can imagine your Flask application as running in a completely isolated environment, responding to a single HTTP request. Apache handles multi-threading your application when there are simultaneous requests.
 
 #### What is mod_wsgi?
 
-Out of the box, Apache is not WSGI-compliant. But Apache is , and mod_wsgi is a module for making Apache WSGI-compliant. Notice in this project's Dockerfile, we install `apache2-prefork-dev`:
+Out of the box, Apache is not WSGI-compliant. But Apache has a flexible architecture that allows users to install additional _modules_, and mod_wsgi is a module for making Apache WSGI-compliant. Notice in this project's Dockerfile, we install `apache2-prefork-dev`:
 
 ```
 RUN apt-get -y install apache2
@@ -46,7 +46,7 @@ $ docker build -t <TAG NAME> .
 $ docker run -p 80:80 -d <IMAGE ID>.
 ```
 
-- Navigate to `<IP address of Docker machine>/hip` and verify that Apache is properly delegating to Hip.
+- Verify that `<IP address of Docker machine>/hip` works, i.e. that Apache is properly delegating to Hip.
 - Move your code into the Hip application, renaming things as needed.
 
 #### Developing locally
