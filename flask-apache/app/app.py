@@ -4,10 +4,10 @@ import os
 app = flask.Flask(__name__)
 
 # Rename this.
-ENTRY_POINT = '/hip/'
+ENTRY_POINT = '/flask-apache/'
 
 # And this.
-SERVER_ROOT = os.path.dirname(os.getcwd()) + '/hip/app'
+SERVER_ROOT = os.path.dirname(os.getcwd()) + '/flask-apache/app'
 
 
 @app.route(ENTRY_POINT, methods=['GET'])

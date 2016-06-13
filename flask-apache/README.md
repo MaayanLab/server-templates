@@ -1,6 +1,6 @@
-# hip-flask
+# Flask-Apache
 
-Hip is a template for web applications using [Flask](http://flask.pocoo.org/), [Apache HTTP Server](http://httpd.apache.org/), and [Docker](https://www.docker.com/).
+This is a template for web applications using [Flask](http://flask.pocoo.org/), [Apache HTTP Server](http://httpd.apache.org/), and [Docker](https://www.docker.com/).
 
 ## Deploying a Flask application to production
 
@@ -46,8 +46,8 @@ $ docker build -t <TAG NAME> .
 $ docker run -p 80:80 -d <IMAGE ID>.
 ```
 
-- Verify that `<IP address of Docker machine>/hip` works, i.e. that Apache is properly delegating to Hip.
-- Move your code into the Hip application, renaming things as needed.
+- Verify that `<IP address of Docker machine>/flask-apache` works, i.e. that Apache is properly delegating to flask-apache.
+- Move your code into the flask-apache application, renaming things as needed.
 
 #### Developing locally
 
