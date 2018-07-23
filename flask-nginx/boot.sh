@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-root=/flask-nginx
 user=r
-log=$root/error.log
+
+diskroot=/myapp
+sslroot=/ssl
+log=$diskroot/error.log
+
+servername=myserver
+webroot=
 
 function setup {
 
@@ -36,7 +41,7 @@ events {
 }
 
 http {
-    access_log $log;
+	access_log $log;
 	error_log $log;
 
 	gzip              on;
@@ -50,16 +55,34 @@ http {
 					  application/x-javascript
 					  application/atom+xml;
 
+# Comment out for port 80 -> 443 Redirect
+#     server {
+#         listen          80;
+#         server_name     $servername;
+#         rewrite ^/(.*)  https://\$host/\$1 permanent;
+#     }
+
     server {
         listen 80;
+# 	listen 443; # For SSL
+	server_name $servername;
+
+# Comment out for SSL support--requires .crt and .key files
+#         ssl on;
+#         ssl_certificate $sslroot/cert.crt;
+#         ssl_certificate_key $sslroot/cert.key;
+#         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+#         ssl_prefer_server_ciphers on;
+#         ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+
         charset utf-8;
         client_max_body_size 20M;
         sendfile on;
         keepalive_timeout 0;
         large_client_header_buffers 8 32k;
 
-        location /static  {
-            alias $root/app/static;
+        location $webroot/static  {
+            alias $diskroot/app/static;
         }
 
         location / {
