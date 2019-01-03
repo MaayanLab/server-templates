@@ -11,6 +11,8 @@ RUN apt-get update && \
         vim \
         uwsgi-core
 
+RUN pip3 install -Ivr uwsgi Flask
+
 ADD requirements.txt /requirements.txt
 RUN pip3 install -Ivr /requirements.txt
 

@@ -2,11 +2,11 @@
 
 user=r
 
-diskroot=/myapp
+diskroot=/flask-nginx
 sslroot=/ssl
 log=$diskroot/error.log
 
-servername=myserver
+servername=
 webroot=
 
 function setup {
@@ -15,7 +15,7 @@ echo "Creating user..." >> $log
 adduser --disabled-password --gecos '' $user >> $log
 
 echo "Writing wsgi.ini..." >> $log
-cat << EOF | tee -a $root/wsgi.ini >> $log
+cat << EOF | tee -a $diskroot/wsgi.ini >> $log
 [uwsgi]
 uid = $user
 gid = $user
@@ -23,15 +23,15 @@ gid = $user
 master = true
 processes = 5
 
-chdir = $root
-wsgi-file = $root/wsgi.py
+chdir = $diskroot
+wsgi-file = $diskroot/wsgi.py
 
 socket = 127.0.0.1:8080
 daemonize = $log
 EOF
 
 echo "Writing nginx.conf..." >> $log
-cat << EOF | tee -a $root/nginx.conf >> $log
+cat << EOF | tee -a $diskroot/nginx.conf >> $log
 user $user $user;
 
 worker_processes 1;
@@ -99,10 +99,10 @@ http {
 EOF
 
 echo "Starting uwsgi..." >> $log
-uwsgi --ini $root/wsgi.ini >> $log
+uwsgi --ini $diskroot/wsgi.ini >> $log
 
 echo "Starting nginx..." >> $log
-nginx -c $root/nginx.conf >> $log
+nginx -c $diskroot/nginx.conf >> $log
 
 }
 
