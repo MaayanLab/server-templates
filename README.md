@@ -32,5 +32,7 @@ Each template is labeled by the technologies it uses. The technologies are descr
 
 - `debian`: A well-established linux distribution often used as the base for docker images
 - `flask`: A light-weight, web application framework for tiny python-driven applications
+- `javascript`: Javascript server (nodejs) / client (browser)
 - `nginx`: A high-performance yet light-weight web server and load balancer
 - `python`: The python **3** programming language; version 2 is deprecated
+- `react`: A javascript framework for HTML in Javascript

@@ -1,0 +1,9 @@
+{
+  "project_name": "Your App Name",
+  "project_author": "Your Name <your_email@example.org>",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_component": "{{ ''.join(map(str.capitalize, cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_').split('_'))) }}",
+  "version": "0.1.0",
+  "project_short_description": "A brief application description / tagline.",
+  "open_source_license": ["MIT", "BSD", "ISC", "Apache-2.0", "GNU-3", "NA"]
+}
