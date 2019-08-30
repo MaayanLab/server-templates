@@ -1,0 +1,4 @@
+# Python dependencies
+uwsgi
+Flask
+python-dotenv
