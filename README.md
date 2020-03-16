@@ -2,38 +2,6 @@
 
 These server templates are here to get you started fast with some best-practices baked in. To setup the template you'll need `cookiecutter`.
 
-
-## Overview (from [cookiecutter docs](https://cookiecutter.readthedocs.io/en/latest/overview.html))
-### Input
-This is the directory structure for a simple cookiecutter::
-
-    cookiecutter-something/
-    ├── {{ cookiecutter.project_name }}/  <--------- Project template
-    │   └── ...
-    ├── blah.txt                      <--------- Non-templated files/dirs
-    │                                            go outside
-    │
-    └── cookiecutter.json             <--------- Prompts & default values
-
-You must have:
-
-* A `cookiecutter.json` file.
-* A `{{ cookiecutter.project_name }}/` directory, where
-  `project_name` is defined in your `cookiecutter.json`.
-
-Beyond that, you can have whatever files/directories you want.
-
-
-### Output
-
-This is what will be generated locally, in your current directory::
-
-    mysomething/  <---------- Value corresponding to what you enter at the
-    │                         project_name prompt
-    │
-    └── ...       <-------- Files corresponding to those in your
-                            cookiecutter's `{{ cookiecutter.project_name }}/` dir
-
 ## Installing Cookiecutter
 Whether or not you will be developing a python application, `cookiecutter` uses python. Assuming you already have python already installed, you can use the following command to install `cookiecutter`.
 ```
@@ -68,3 +36,34 @@ Each template is labeled by the technologies it uses. The technologies are descr
 - `nginx`: A high-performance yet light-weight web server and load balancer
 - `python`: The python **3** programming language; version 2 is deprecated
 - `react`: A javascript framework for HTML in Javascript
+
+## Developing a cookiecutter (from [cookiecutter docs](https://cookiecutter.readthedocs.io/en/latest/overview.html))
+### Input
+This is the directory structure for a simple cookiecutter::
+
+    cookiecutter-something/
+    ├── {{ cookiecutter.project_name }}/  <--------- Project template
+    │   └── ...
+    ├── blah.txt                      <--------- Non-templated files/dirs
+    │                                            go outside
+    │
+    └── cookiecutter.json             <--------- Prompts & default values
+
+You must have:
+
+* A `cookiecutter.json` file.
+* A `{{ cookiecutter.project_name }}/` directory, where
+  `project_name` is defined in your `cookiecutter.json`.
+
+Beyond that, you can have whatever files/directories you want.
+
+
+### Output
+
+This is what will be generated locally, in your current directory::
+
+    mysomething/  <---------- Value corresponding to what you enter at the
+    │                         project_name prompt
+    │
+    └── ...       <-------- Files corresponding to those in your
+                            cookiecutter's `{{ cookiecutter.project_name }}/` dir
