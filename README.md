@@ -15,13 +15,10 @@ You can verify that this worked by ensuring you have the `cookiecutter` binary a
 # Installation
 git clone http://github.com/MaayanLab/server-templates.git ~/.cookiecutter/
 
-# Update
-git pull ~/.cookiecutter/
-
-
-# Make sure you're on the cookiecutter branch
+# Make sure you're on the cookiecutter branch and update
 cd ~/.cookecutter/
 git checkout cookiecutter
+git pull
 ```
 
 ## Using a template
