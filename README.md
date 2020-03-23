@@ -17,6 +17,11 @@ git clone http://github.com/MaayanLab/server-templates.git ~/.cookiecutter/
 
 # Update
 git pull ~/.cookiecutter/
+
+
+# Make sure you're on the cookiecutter branch
+cd ~/.cookecutter/
+git checkout cookiecutter
 ```
 
 ## Using a template
