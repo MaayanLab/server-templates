@@ -74,8 +74,8 @@ http {
       proxy_set_header   X-Forwarded-Host \$server_name;
     }
 
-    location static/ {
-      alias /app/static/;
+    location ${PREFIX}static/ {
+      alias /app/app/static;
     }
   }
 }
