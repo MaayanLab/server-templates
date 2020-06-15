@@ -8,7 +8,9 @@ Whether or not you will be developing a python application, `cookiecutter` uses 
 pip3 install --user cookiecutter
 ```
 
-You can verify that this worked by ensuring you have the `cookiecutter` binary available (i.e. `which cookiecutter` should not have an error).
+You can verify that this worked by ensuring you have the `cookiecutter` binary available (i.e. `which cookiecutter` should not have non-empty output and not an error).
+
+On macOS you might need to add ```/Library/Frameworks/Python.framework/Versions/{your-current-Python-version}/bin/``` to ```$PATH```
 
 ## Installing our server template library
 ```
