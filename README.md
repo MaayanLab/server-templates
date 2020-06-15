@@ -27,7 +27,7 @@ Replacing `template-name` here with your template of choice:
 # NOTE: You can use ~/.cookiecutter/<TAB> to auto-complete the templates
 cookiecutter ~/.cookiecutter/<template-name>
 ```
-Answer all the prompts and a directory with your application ready to go will be generated. Read the generated `README.md` for more information on moving forward with the template.
+Answer all the prompts and a directory with your application ready to go will be generated. Open the generated folder and read the `README.md` for more information on moving forward with the template.
 
 ## Templates
 Each template is labeled by the technologies it uses. The technologies are described below:
@@ -40,6 +40,7 @@ Each template is labeled by the technologies it uses. The technologies are descr
 - `react`: A javascript framework for HTML in Javascript
 
 ## Developing a cookiecutter (from [cookiecutter docs](https://cookiecutter.readthedocs.io/en/latest/overview.html))
+_This is general how-it's-made information. You don't need to follow any of these steps to develop a project._
 ### Input
 This is the directory structure for a simple cookiecutter::
 
@@ -62,7 +63,7 @@ Beyond that, you can have whatever files/directories you want.
 
 ### Output
 
-This is what will be generated locally, in your current directory::
+This is what will be generated locally, in your current directory:
 
     mysomething/  <---------- Value corresponding to what you enter at the
     │                         project_name prompt
