@@ -1,0 +1,90 @@
+openapi: "3.0.0"
+info:
+  version: {{ cookiecutter.version }}
+  title: {{ cookiecutter.project_slug }}
+  description: {{ cookiecutter.project_short_description }}
+  license:
+    name: {{ cookiecutter.open_source_license }}
+servers:
+  - url: /
+paths:
+  /:
+    get:
+      description: |
+        This openapi spec, visit /ui for UI version.
+      operationId: openapi
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+  /openapi.json:
+    get:
+      description: |
+        This openapi spec, visit /ui for UI version.
+      operationId: openapi.json
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+  /openapi.yaml:
+    get:
+      description: |
+        This openapi spec, visit /ui for UI version.
+      operationId: openapi.yaml
+      responses:
+        '200':
+          description: success
+          content:
+            application/x-yaml:
+              schema:
+                type: string
+            text/yaml:
+              schema:
+                type: string
+  /hello:
+    get:
+      description: |
+        Performs a greeting
+      operationId: hello
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+            default: 'World'
+      responses:
+        '200':
+          description: |
+            The greeting in json
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  greeting:
+                    type: string
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

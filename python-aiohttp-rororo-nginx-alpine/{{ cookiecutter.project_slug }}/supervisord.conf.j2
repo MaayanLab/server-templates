@@ -1,0 +1,32 @@
+[supervisord]
+
+[program:nginx]
+process_name=%(program_name)s_%(process_num)d
+numprocs=1
+startsecs=1
+startretries=3
+autostart=true
+command=/usr/sbin/nginx -c /app/nginx.conf
+autorestart=true
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+
+[program:app]
+process_name = %(program_name)s_%(process_num)s
+{{ 'numprocs={{ SERVER_PROCS|default(1, true)|int }}' }}
+{{ 'numprocs_start={{ SERVER_PROCS|default(1, true)|int }}' }}
+startsecs=0
+startretries=3
+autostart=true
+autorestart=true
+command=/usr/bin/env python3 -u /app/app.py --listen=/tmp/app_%(process_num)s.sock
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+
+[eventlistener:quit_on_failure]
+command=bash -c "printf 'READY\n' && while read line; do kill -SIGQUIT $PPID; done < /dev/stdin"
+events=PROCESS_STATE_FATAL

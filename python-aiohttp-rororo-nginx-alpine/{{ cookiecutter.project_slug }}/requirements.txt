@@ -1,0 +1,7 @@
+aiohttp
+click
+jinja2-cli
+python-dotenv
+pyyaml
+rororo
+supervisor

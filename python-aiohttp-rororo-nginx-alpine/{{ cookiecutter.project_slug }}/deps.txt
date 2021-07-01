@@ -1,0 +1,6 @@
+bash
+build-base
+nginx
+py3-pip
+python3
+python3-dev
