@@ -1,0 +1,9 @@
+{
+  "project_name": "Component Name",
+  "component_name": "{{ cookiecutter.project_name.replace(' ', '') }}",
+  "project_js_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+  "project_py_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_author": "Ma'ayan Lab",
+  "project_version": "0.1.0",
+  "project_description": "App description."
+}

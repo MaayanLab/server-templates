@@ -1,0 +1,9 @@
+# don't commit these files
+__pycache__
+.DS_Store
+.ipynb_checkpoints
+node_modules
+
+# if deploying to be github installable, comment these out
+lib
+{{ cookiecutter.project_py_slug }}/{{ cookiecutter.project_py_slug }}.js
