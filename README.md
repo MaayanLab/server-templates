@@ -20,14 +20,15 @@ cookiecutter gh:maayanlab/server-templates --directory [some-template-directory-
 Answer all the prompts and a directory with your application ready to go will be generated. Open the generated folder and read the `README.md` for more information on moving forward with the template.
 
 ## Selecting a Template
-Each template is labeled by the technologies it uses. The technologies are described below:
+Each template is labeled by the technologies it uses. More information can be found by clicking the template directory and reviewing the README, and additional information will be in the README you get once your project is created. Some of the technologies used are described briefly below:
 
-- `debian`: A well-established linux distribution often used as the base for docker images
 - `flask`: A light-weight, web application framework for tiny python-driven applications
 - `javascript`: Javascript server (nodejs) / client (browser)
 - `nginx`: A high-performance yet light-weight web server and load balancer
 - `python`: The python **3** programming language; version 2 is deprecated
-- `react`: A javascript framework for HTML in Javascript
+- `react`: A javascript frontend framework for HTML in Javascript
+- `typescript`: A type-safe variant of javascript with improved developer experience
+- `nextjs`: A full-stack javascript framework for joint frontend-backend development using `react`
 
 ## Developing a cookiecutter (from [cookiecutter docs](https://cookiecutter.readthedocs.io/en/latest/overview.html))
 _This is general how-it's-made information. You don't need to follow any of these steps to develop a project._
@@ -38,8 +39,8 @@ This is the directory structure for a simple cookiecutter::
     cookiecutter-something/
     ├── {{ cookiecutter.project_name }}/  <--------- Project template
     │   └── ...
-    ├── blah.txt                      <--------- Non-templated files/dirs
-    │                                            go outside
+    ├── README.md                     <--------- A helpful README
+    │
     │
     └── cookiecutter.json             <--------- Prompts & default values
 
