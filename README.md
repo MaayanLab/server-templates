@@ -6,32 +6,20 @@ These server templates are here to get you started fast with some best-practices
 Whether or not you will be developing a python application, `cookiecutter` uses python. Assuming you already have python already installed, you can use the following command to install `cookiecutter`.
 ```
 pip3 install --user cookiecutter
+# confirm cookiecutter is available
+cookiecutter
 ```
-
-You can verify that this worked by ensuring you have the `cookiecutter` binary available (i.e. `which cookiecutter` should not have non-empty output and not an error).
 
 On macOS you might need to add ```/Library/Frameworks/Python.framework/Versions/{your-current-Python-version}/bin/``` to ```$PATH```
 
-## Installing our server template library
+## Installing a template from the library
 ```
-# Installation
-git clone http://github.com/MaayanLab/server-templates.git ~/.cookiecutter/
-
-# Make sure you're on the cookiecutter branch and update
-cd ~/.cookecutter/
-git checkout cookiecutter
-git pull
+cookiecutter gh:maayanlab/server-templates --directory [some-template-directory-name]
 ```
 
-## Using a template
-Replacing `template-name` here with your template of choice:
-```
-# NOTE: You can use ~/.cookiecutter/<TAB> to auto-complete the templates
-cookiecutter ~/.cookiecutter/<template-name>
-```
 Answer all the prompts and a directory with your application ready to go will be generated. Open the generated folder and read the `README.md` for more information on moving forward with the template.
 
-## Templates
+## Selecting a Template
 Each template is labeled by the technologies it uses. The technologies are described below:
 
 - `debian`: A well-established linux distribution often used as the base for docker images
@@ -43,6 +31,7 @@ Each template is labeled by the technologies it uses. The technologies are descr
 
 ## Developing a cookiecutter (from [cookiecutter docs](https://cookiecutter.readthedocs.io/en/latest/overview.html))
 _This is general how-it's-made information. You don't need to follow any of these steps to develop a project._
+
 ### Input
 This is the directory structure for a simple cookiecutter::
 
