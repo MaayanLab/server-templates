@@ -16,18 +16,15 @@ pip install -r requirements.txt
 ### Running in development
 ```bash
 source venv/bin/activate
-python run.py
+python -m flask -A app.app:app run --debug
 ```
 
-And visit <http://localhost:8080/{{ cookiecutter.project_slug }}>.
+And visit <http://localhost:5000>.
 
 ### Installing new dependencies
 
 #### Python dependencies
 Ensure you update `requirements.txt` whenever installing a new dependency with `pip`.
-
-#### System dependencies
-In the case of extra (debian) system dependencies, add them to `deps.txt`.
 
 ## Deployment
 
@@ -36,12 +33,7 @@ In the case of extra (debian) system dependencies, add them to `deps.txt`.
 docker-compose build app
 ```
 
-### Deploy
-```bash
-docker-compose push app
-```
-
 ### Execute locally
 ```
-docker-compose run app
+docker-compose up -d app
 ```

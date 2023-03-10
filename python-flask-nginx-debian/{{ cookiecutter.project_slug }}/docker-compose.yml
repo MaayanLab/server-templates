@@ -3,6 +3,5 @@ services:
   app:
     build: .
     image: {{ cookiecutter.project_tag }}
-    env_file: .env
     ports:
-      - 8080:80
+      - 5000:80

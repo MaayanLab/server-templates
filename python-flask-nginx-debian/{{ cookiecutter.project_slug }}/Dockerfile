@@ -1,26 +1,28 @@
-FROM debian:stable
+FROM python
 
-RUN set -x \
-  && echo "Preparing user..." \
-  && useradd -ms /bin/bash -d /app app
+ARG DEBIAN_FRONTEND="noninteractive"
 
-ADD deps.txt /app/deps.txt
+ADD ./deploy/deps.txt /tmp/deps.txt
 RUN set -x \
   && echo "Installing system dependencies from deps.txt..." \
   && apt-get -y update \
-  && apt-get -y install $(grep -v '^#' /app/deps.txt) \
-  && rm /app/deps.txt
+  && apt-get -y install $(grep -v '^#' /tmp/deps.txt) \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm /tmp/deps.txt
 
-ADD requirements.txt /app/requirements.txt
+COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
+COPY ./deploy/supervisord.conf /etc/supervisor/supervisord.conf
+
+ADD requirements.txt /tmp/requirements.txt
+ADD deploy/requirements.txt /tmp/requirements.production.txt
 RUN set -x \
   && echo "Installing python dependencies from requirements.txt..." \
-  && pip3 install -Ivr /app/requirements.txt \
-  && rm /app/requirements.txt
+  && pip install --no-cache-dir -r /tmp/requirements.txt -r /tmp/requirements.production.txt \
+  && rm /tmp/requirements.txt /tmp/requirements.production.txt
+
+COPY ./app /app
+WORKDIR /app
 
 EXPOSE 80
-ADD boot.sh /app/boot.sh
-RUN set -x && chmod +x /app/boot.sh
-CMD /app/boot.sh
 
-ADD app /app/app
-RUN set -x && chown app:app -R /app/
+CMD ["supervisord", "-n"]
