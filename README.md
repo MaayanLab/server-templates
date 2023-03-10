@@ -1,16 +1,34 @@
 # server-templates
 
-These server templates are here to get you started fast with some best-practices baked in. To setup the template you'll need `cookiecutter`.
+These server templates are here to get you started fast with some best-practices baked in.
 
-## Installing Cookiecutter
-Whether or not you will be developing a python application, `cookiecutter` uses python. Assuming you already have python already installed, you can use the following command to install `cookiecutter`.
+## Quick Start
+
+### Install Python
+
+#### Mac
+Install [homebrew](https://brew.sh/) for easily installing lots of things. Then:
 ```
-pip3 install --user cookiecutter
+brew install python
+```
+
+#### Windows
+Install [scoop](https://scoop.sh/) for easily installing lots of things. Then:
+```
+scoop install python
+```
+
+#### Linux
+Install python from your distribution's package manager.
+
+### Install Cookiecutter
+```bash
+# install cookiecutter (if not already present)
+pip install cookiecutter
+
 # confirm cookiecutter is available
 cookiecutter
 ```
-
-On macOS you might need to add ```/Library/Frameworks/Python.framework/Versions/{your-current-Python-version}/bin/``` to ```$PATH```
 
 ## Installing a template from the library
 ```
