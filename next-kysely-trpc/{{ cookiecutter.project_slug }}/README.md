@@ -21,5 +21,6 @@ npx kysely migrate:latest
 
 # start app in development
 npm i
+npm run codegen
 npm run dev
 ```
