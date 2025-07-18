@@ -24,3 +24,8 @@ npm i
 npm run codegen
 npm run dev
 ```
+
+### Development
+
+- [instructions on using kysely to manage the db](./src/lib/database/README.md)
+- [instructions on using trpc for typesafe API development](./src/lib/trpc/README.md)
