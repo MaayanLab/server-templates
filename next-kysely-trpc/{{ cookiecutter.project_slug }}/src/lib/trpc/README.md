@@ -22,7 +22,7 @@ export default router({
 })
 ```
 
-## Client API Request
+## Client-side API Request
 
 ```ts
 // /app/**/*/page.ts
@@ -34,6 +34,22 @@ export default function Page() {
   if (!version.data) {
     return <div>Loading...</div>
   }
+  return (
+    <div>
+      <p>{version.data}</p>
+    </div>
+  )
+}
+```
+
+## Server-side API Request
+
+```ts
+// /app/**/*/page.ts
+import trpc from "@/lib/trpc/server"
+
+export default async function Page() {
+  const version = await trpc.version()
   return (
     <div>
       <p>{version.data}</p>
