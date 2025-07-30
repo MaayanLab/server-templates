@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen:kysely": "kysely-codegen",
+    "codegen:kysely": "kysely-codegen --out-file=src/lib/database/db.d.ts",
     "codegen:trpc": "ts-node src/lib/trpc/codegen.ts",
     "codegen": "concurrently npm:codegen:*"
   },

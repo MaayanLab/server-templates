@@ -1,4 +1,4 @@
-import { DB } from 'kysely-codegen'
+import type { DB } from './db'
 import { Pool } from 'pg'
 import { Kysely, PostgresDialect } from 'kysely'
 import Cursor from 'pg-cursor'
@@ -15,3 +15,4 @@ export const db = new Kysely<DB>({
   dialect,
 })
 
+export { DB }
